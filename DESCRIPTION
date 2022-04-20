@@ -1,17 +1,11 @@
 Package: recombinationMCCL
 Type: Package
 Title: Application of Markov Chain Composite Likelihood in Recombination Model
-Version: # what is this
-Date: 2022-02-22
+Version: 1
+Date: 2022-04-20
 Authors@R: person("Jianping", "Sun", email = j_sun4@uncg.edu),  person("Grace", "Rhodes", email = rhode22g@mtholyoke.edu)
 Description: This package implements the Recombination Model proposed by Jianping Sun PhD, University of North Carolina Greensboro. The model estimates the unknown distribution of ancestor SNP sequences from a sample of observed descendant SNP sequences, using Markov chain composite likelihood and hierarchical estimation to account for computational burden and complex parameter space constraints. This package contains a preliminary version of functions that carry out this estimation for Markov chain orders of 1, 2, and 3 only.
 URL: https://github.com/rhode22g/recombinationMCCL/
-BugReports: # do i need this
-Depends: # idk what this is either
-Encoding: # what is this
-LazyData: # huh
-RoxygenNote: # idk what that is
-Roxygen: # nope still lost
 Imports:
   AlgebraicHaploPackage
   sfsmisc
