@@ -14,8 +14,26 @@ The converted data is available under `yri_trio_1_binary.csv`.
 
 ## Main Functions
 
+`estimates_m0`
+
+`estimates_m1`
+
+`estimates_m2`
+
+`estimates_m3`
+
 ## Subfunctions
 
 # JOINT ESTIMATION FUNCTIONS
 
+`ancestor_pairs`
+
+`ancestor_three`
+
+`ancestor_four`
+
 # SIMULATING DATA FUNCTIONS
+
+## Main Functions
+
+## Subfunctions
