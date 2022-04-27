@@ -20,15 +20,15 @@ This function returns a matrix of the onewise marginal estimates. It takes three
 
 `estimates_m1`
 
-This function returns a matrix of the pairwise marginal estimates. It takes four parameters: (1) `L` is the length of the SNP sequences in the sample, (2) `q` is the chosen probability of recombination, (3) `n` is the number of descendant in the sample, and (4) `d` is a data frame of the sample of descendant sequences where rows index descendants and columns index SNP sites (number of rows must equal `n` and number of columns must equal `L`). In the output, rows correspond to the parameters in order of bitwise value and the columns correspond to sites.
+This function returns a matrix of the pairwise marginal estimates. It takes four parameters: (1) `L` is the length of the SNP sequences in the sample, (2) `q` is the chosen probability of recombination, (3) `n` is the number of descendants in the sample, and (4) `d` is a data frame of the sample of descendant sequences where rows index descendants and columns index SNP sites (number of rows must equal `n` and number of columns must equal `L`). In the output, rows correspond to the parameters in order of bitwise value and the columns correspond to sites.
 
 `estimates_m2`
 
-This function returns a matrix of threewise marginal estimates. It takes four parameters: (1) `L` `q` `n` `descend`
+This function returns a matrix of threewise marginal estimates. It takes four parameters: (1) `L` is the length of the SNP sequences in the sample, (2) `q` is the chosen probability of recombination, (3) `n` is the number of descendants in the sample, and (4) `descend` is a data frame of the sample of descendant sequences where rows index descendants and columns index SNP sites (number of rows must equal `n` and number of columns must equal `L`). In the output, rows correspond to the parameters in order of bitwise value and the columns correspond to sites.
 
 `estimates_m3`
 
-This function returns a matrix of fourwise marginal estimates. It takes four parameters: `L` `q` `n` `d`
+This function returns a matrix of fourwise marginal estimates. It takes four parameters: (1) `L` is the length of the SNP sequences in the sample, (2) `q` is the chosen probability of recombination, (3) `n` is the number of descendants in the sample, and (4) `d` is a data frame of the sample of descendant sequences where rows index descendants and columns index SNP sites (number of rows must equal `n` and number of columns must equal `L`). In the output, rows correspond to the parameters in order of bitwise value and the columns correspond to sites.
 
 ## Subfunctions
 
