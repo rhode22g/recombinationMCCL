@@ -24,7 +24,11 @@ This function returns a matrix of the pairwise marginal estimates. It takes four
 
 `estimates_m2`
 
+This function returns a matrix of threewise marginal estimates. It takes four parameters: (1) `L` `q` `n` `descend`
+
 `estimates_m3`
+
+This function returns a matrix of fourwise marginal estimates. It takes four parameters: `L` `q` `n` `d`
 
 ## Subfunctions
 
