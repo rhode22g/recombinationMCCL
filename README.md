@@ -44,13 +44,19 @@ This function calculates the $b_{x_s,x_{s+3}}^s$ coefficients for the process of
 
 `A_1`
 
-This function calculates the $A_1^3$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes two parameters: (1) `n` is the number of descendants in the sample, and (2) `a` is a vector of the $a_{x_s,x_{s+3}}^s$ coefficients (the return of `a_s`).
+This function calculates the $$A_1^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes two parameters: (1) `n` is the number of descendants in the sample, and (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`).
 
 `A_2`
 
+This function calculates the $$A_2^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s`).
+
 `A_3`
 
+This function calculates the $$A_3^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s`).
+
 `A_4`
+
+This function calculates the $$A_4^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s`).
 
 `pick_real`
 
