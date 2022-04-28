@@ -36,35 +36,44 @@ This function returns a matrix of fourwise marginal estimates. It takes four par
 
 `a_s`
 
-This function calculates the $a_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function. It has one parameter `q`, the recombination probability.
+This function calculates the $a_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function. It has one parameter `q`, the recombination probability. It returns a vector of the four coefficients.
 
 `b_s0`
 
-This function calculates the $b_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function for $\phi_s(0)$. It takes two parameters: (1) `q` is the recombination probability, (2) `pi_one` is a matrix of onewise marginal estimates (the output of `estimates_m0`), and (3) `pi_two` is a matix of the pairwise marginal estimates (the output of `estimates_m1`). 
-
-`A_1`
-
-This function calculates the $$A_1^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes two parameters: (1) `n` is the number of descendants in the sample, and (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`).
-
-`A_2`
-
-This function calculates the $$A_2^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s`).
-
-`A_3`
-
-This function calculates the $$A_3^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s`).
-
-`A_4`
-
-This function calculates the $$A_4^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s`).
-
-`pick_real`
-
-`roots_threewise_0`
+This function calculates the $b_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function for $\phi_s(0)$. It takes two parameters: (1) `q` is the recombination probability, (2) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, and (3) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function. It returns a vector of the four coefficients.
 
 `b_s1`
 
+This function calculates the $b_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function for $\phi_s(1)$. It takes two parameters: (1) `q` is the recombination probability, (2) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, and (3) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function. It returns a vector of the four coefficients.
+
+`A_1`
+
+This function calculates the $$A_1^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes two parameters: (1) `n` is the number of descendants in the sample, and (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`). It returns the numerical value of the coefficient.
+
+`A_2`
+
+This function calculates the $$A_2^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s0` or `b_s1`). It returns the numerical value of the coefficient.
+
+`A_3`
+
+This function calculates the $$A_3^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s0` or `b_s1`). It returns the numerical value of the coefficient.
+
+`A_4`
+
+This function calculates the $$A_4^3$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s0` or `b_s1`). It returns the numerical value of the coefficient.
+
+`pick_real`
+
+This function finds the real values in a vector of values. This is used to pick the roots of the cubic functions that are real roots. This is done by finding the values which have an imaginary component greater than `1e-4`, then returning the elements in the vector which don't meet that threshold. 
+
+`roots_threewise_0`
+
+This function takes six parameters: (1) `q` is the recombination probability, (2) `n` is the number of descendants in the sample, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(0)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(0)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(0)$$.
+
+ 
 `roots_threewise_1`
+
+This function takes six parameters: (1) `q` is the recombination probability, (2) `n` is the number of descendants in the sample, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(1)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(1)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(1)$$.
 
 ### m=3 subfunctions
 
