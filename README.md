@@ -148,4 +148,16 @@ This function takes four parameters: (1) `L` is the length of the SNP sequences 
 
 ## Main Functions
 
+`ancestor`
+
+This function generates a simulated ancestor distribution. It takes two parameters: (1) `L` is the length of the sequences to be simulated and (2) `hapmap_data` is a data frame of haplotype SNP data where the columns correspond to the SNP sites and the rows correspond to a haplotype.
+
 ## Subfunctions
+
+`bitwise`
+
+This function calculates the bitwise value for an individual element of a sequence. It takes two parameters: (1) x is the value of the element and (2) is the value of the exponent, which will be set to `(l-i)` by the function `bitwise_vector`. It returns the bitwise value.
+
+`bitwise_vector`
+
+This function calculates the bitwise value for a series of sequences. It takes two parameters: (1) `b` is a vector of the sequences to have bitwise values calculated for in the form `(x_1, x_2, ..., x_L)` and (2) `l` is the length of the sequences. It returns a vector of the bitwise values of the sequences.
