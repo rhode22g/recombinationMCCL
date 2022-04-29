@@ -68,40 +68,66 @@ This function finds the real values in a vector of values. This is used to pick 
 
 `roots_threewise_0`
 
-This function takes six parameters: (1) `q` is the recombination probability, (2) `n` is the number of descendants in the sample, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(0)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(0)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(0)$$.
+This function takes six parameters: (1) `q` is the recombination probability, (2) `n` is a vector of the number of descendants in the sample with the sequences in group 1, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(0)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(0)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(0)$$.
 
  
 `roots_threewise_1`
 
-This function takes six parameters: (1) `q` is the recombination probability, (2) `n` is the number of descendants in the sample, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(1)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(1)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(1)$$.
+This function takes six parameters: (1) `q` is the recombination probability, (2) `n` is a vector of the number of descendants in the sample with the sequences in group 2, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(1)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(1)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(1)$$.
 
 ### m=3 subfunctions
 
 `a_s_four`
 
+This function calculates the $a_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the fourwise probability function. It has one parameter `q`, the recombination probability. It returns a vector of the four coefficients.
+
 `b_s_gr1`
+
+This function calculates the $b_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function for $\phi_s(0,0)$. It takes four parameters: (1) `q` is the recombination probability, (2) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (3) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, and (4) `pi_three` is a subset of the matrix of threewise marginal estimates (output of `estimates_m2`) taken iteratively in the main function. It returns a vector of the four coefficients.
 
 `b_s_gr2`
 
+This function calculates the $b_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function for $\phi_s(0,1)$. It takes four parameters: (1) `q` is the recombination probability, (2) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (3) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, and (4) `pi_three` is a subset of the matrix of threewise marginal estimates (output of `estimates_m2`) taken iteratively in the main function. It returns a vector of the four coefficients.
+
 `b_s_gr3`
+
+This function calculates the $b_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function for $\phi_s(1,0)$. It takes four parameters: (1) `q` is the recombination probability, (2) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (3) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, and (4) `pi_three` is a subset of the matrix of threewise marginal estimates (output of `estimates_m2`) taken iteratively in the main function. It returns a vector of the four coefficients.
 
 `b_s_gr4`
 
+This function calculates the $b_{x_s,x_{s+3}}^s$ coefficients for the process of rewriting the threewise probability function for $\phi_s(1,1)$. It takes four parameters: (1) `q` is the recombination probability, (2) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (3) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, and (4) `pi_three` is a subset of the matrix of threewise marginal estimates (output of `estimates_m2`) taken iteratively in the main function. It returns a vector of the four coefficients.
+
 `A1_four`
+
+This function calculates the $$A_1^4$$ coefficient for rewriting the score equation of the fourwise log-MCCL. It takes two parameters: (1) `n` is the number of descendants in the sample, and (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s_four`). It returns the numerical value of the coefficient.
 
 `A2_four`
 
+This function calculates the $$A_2^4$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s_four`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s_gr1`, `b_s_gr2`, `b_s_gr3`, or `b_s_gr4`). It returns the numerical value of the coefficient.
+
 `A3_four`
+
+This function calculates the $$A_3^4$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s_four`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s_gr1`, `b_s_gr2`, `b_s_gr3`, or `b_s_gr4`). It returns the numerical value of the coefficient.
 
 `A4_four`
 
+This function calculates the $$A_4^4$$ coefficient for rewriting the score equation of the threewise log-MCCL. It takes three parameters: (1) `n` is the number of descendants in the sample, (2) `a` is a vector of the $$a_{x_s,x_{s+3}}^s$$ coefficients (the return of `a_s_four`), and (3) `b` is a vector of the $$b_{x_s,x_{s+3}}^s$$ coefficients (the return of `b_s_gr1`, `b_s_gr2`, `b_s_gr3`, or `b_s_gr4`). It returns the numerical value of the coefficient.
+
 `roots_fourwise_gr1`
+
+This function takes six parameters: (1) `q` is the recombination probability, (2) `n_vec` is a vector of the number of descendants in the sample with the sequences in group 1 calculated by the main function, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(0,0)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(0,0)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(0,0)$$.
 
 `roots_fourwise_gr2`
 
+This function takes six parameters: (1) `q` is the recombination probability, (2) `n_vec` is a vector of the number of descendants in the sample with the sequences in group 2 calculated by the main function, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(0,1)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(0,1)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(0,1)$$.
+
 `roots_fourwise_gr3`
 
+This function takes six parameters: (1) `q` is the recombination probability, (2) `n_vec` is a vector of the number of descendants in the sample with the sequences in group 3 calculated by the main function, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(1,0)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(1,0)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(1,0)$$.
+
 `roots_fourwise_gr4`
+
+This function takes six parameters: (1) `q` is the recombination probability, (2) `n_vec` is a vector of the number of descendants in the sample with the sequences in group 4 calculated by the main function, (3) `pi_one` is a subset of the matrix of onewise marginal estimates (output of `estimates_m0`) taken iteratively in the main function, (4) `pi_two` is a subset of the matrix of pairwise marginal estimates (output of `estimates_m1`) taken iteratively in the main function, (5) `lower_b` is the lower bound of the interval we constrain $$\hat{\phi}_s(1,1)$$ to, and (6) `upper_b` is the upper bound of the interval we constrain $$\hat{\phi}_s(1,1)$$ to. This function includes calls to the subfunctions which calculate coefficients. It returns the constrained, final estimate of $$\hat{\phi}_s(1,1)$$.
 
 # JOINT ESTIMATION FUNCTIONS
 
