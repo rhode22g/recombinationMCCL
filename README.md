@@ -133,9 +133,16 @@ This function takes six parameters: (1) `q` is the recombination probability, (2
 
 `ancestor_pairs`
 
+This function takes four parameters: (1) `L` is the length of the SNP sequences being estimated, (2) `m` is the Markov chain order (must be entered as 1), (3) `pairs_est` is the matrix of the pairwise estimates (the output of `estimates_m1`), and (4) `ones_est` is the matrix of the onewise estimates (the output of `estimates_m0`). It returns of the matrix of the joint distribution estimates, with one column that corresponds to the probability, and the rows ordered by the bitwise value of the sequences.
+
 `ancestor_three`
 
+This function takes four parameters: (1) `L` is the length of the SNP sequences being estimated, (2) `m` is the Markov chain order (must be entered as 2), (3) `threes_est` is the matrix of the threewise estimates (the output of `estimates_m2`), and (4) `pairs_est` is the matrix of the pairwise estimates (the output of `estimates_m1`). It returns of the matrix of the joint distribution estimates, with one column that corresponds to the probability, and the rows ordered by the bitwise value of the sequences.
+
 `ancestor_four`
+
+This function takes four parameters: (1) `L` is the length of the SNP sequences being estimated, (2) `m` is the Markov chain order (must be entered as 3), (3) `four_est` is the matrix of the fourwise estimates (the output of `estimates_m3`), and (4) `three_est` is the matrix of the threewise estimates (the output of `estimates_m2`). It returns of the matrix of the joint distribution estimates, with one column that corresponds to the probability, and the rows ordered by the bitwise value of the sequences.
+
 
 # SIMULATING DATA FUNCTIONS
 
