@@ -1,5 +1,5 @@
 # recombinationMCCL
-## this is a preliminary version of the package which can carry out the marginal estimation and joint distribution reconstruction for m=1,2,3
+## This is a preliminary version of the package which can carry out the marginal estimation and joint distribution reconstruction for m=1,2,3. More details on these functions can be found in Vignette.pdf
 
 
 # BUILT IN DATA
