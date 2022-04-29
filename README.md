@@ -150,7 +150,11 @@ This function takes four parameters: (1) `L` is the length of the SNP sequences 
 
 `ancestor`
 
-This function generates a simulated ancestor distribution. It takes two parameters: (1) `L` is the length of the sequences to be simulated and (2) `hapmap_data` is a data frame of haplotype SNP data where the columns correspond to the SNP sites and the rows correspond to a haplotype.
+This function generates a simulated ancestor distribution. It takes two parameters: (1) `L` is the length of the sequences to be simulated and (2) `hapmap_data` is a data frame of haplotype SNP data where the columns correspond to the SNP sites and the rows correspond to a haplotype. It returns a matrix of the simulated distribution with one column that corresponds to the probability, and the rows ordered by the bitwise value of the sequences.
+
+`descendent_sample`
+
+This function generates a simulated sample of descendant sequences. It takes five parameters: (1) `L` is the length of the sequences to be simulated, (2) `q` is the recombination probability, (3) `n` is the number of samples to be generated, (4) `seed` is a numerical value used to set the seed for replicability of random results, and (5) `hapmap` is a data frame of haplotype SNP data where the columns correspond to the SNP sites and the rows correspond to a haplotype. It returns a matrix of sequences where each row is a descendant and each column is a site on the sequence.
 
 ## Subfunctions
 
@@ -161,3 +165,7 @@ This function calculates the bitwise value for an individual element of a sequen
 `bitwise_vector`
 
 This function calculates the bitwise value for a series of sequences. It takes two parameters: (1) `b` is a vector of the sequences to have bitwise values calculated for in the form `(x_1, x_2, ..., x_L)` and (2) `l` is the length of the sequences. It returns a vector of the bitwise values of the sequences.
+
+`sim_ancestor`
+
+This function calculates the sequence proportions for each of the sequences in the simulated joint distribution. It takes two parameters: (1) `possible` is a vector of the bitwise values for each of the possible sequences (the output of `bitwise_vector`) and (2) `pool` is a vector of the bitwise values for the sequences in the haplotype SNP data passed to the main function (the output of `bitwise_vector`). It returns a vector of the probabilities.
